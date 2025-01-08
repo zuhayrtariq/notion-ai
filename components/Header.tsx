@@ -5,11 +5,12 @@ import { SignInButton, useUser,SignedOut, SignedIn, UserButton } from "@clerk/ne
 const Header = () => {
 
   const {user} = useUser();
+  console.log("User : ",user)
   return (
-    <div>
+    <div className="flex items-center justify-between p-4">
       {
         user && (
-          <h1>{user?.firstName}{`'s`}</h1>
+          <h1 className="md:text-2xl sm:text-lg">{user?.firstName}{`'s`}</h1>
         )
       }
       {/* {Breadcrumbs} */}
